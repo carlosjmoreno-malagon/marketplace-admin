@@ -2,7 +2,6 @@ package primero;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -26,18 +25,18 @@ import javax.swing.DefaultComboBoxModel;
 public class registro extends JFrame {
 	private JPanel contentPane;
 	private JLabel lblNewLabel;
-	public static JButton guardar;
-	public static JTextField nombre;
-	public static JTextField precio;
-	public static JTextField id;
+	public  JButton guardar;
+	public  JTextField nombre;
+	public  JTextField precio;
+	public  JTextField id;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
-	public static JButton borrar;
-	public static JButton modificar;
-	public static JTextField tamaño;
+	public  JButton borrar;
+	public  JButton modificar;
+	public  JTextField tamaÃ±o;
 	private JLabel lblNewLabel_3;
-	public static JButton buscar;
-	public static JButton btnNewButton_1;
+	public  JButton buscar;
+	public  JButton btnNewButton_1;
 	private JComboBox comboBox;
 	
 
@@ -122,10 +121,10 @@ public class registro extends JFrame {
 						contentPane.add(lblNewLabel_3);
 					}
 					{
-						tamaño = new JTextField();
-						tamaño.setBounds(199, 150, 86, 20);
-						contentPane.add(tamaño);
-						tamaño.setColumns(10);
+						tamaÃ±o = new JTextField();
+						tamaÃ±o.setBounds(199, 150, 86, 20);
+						contentPane.add(tamaÃ±o);
+						tamaÃ±o.setColumns(10);
 					}
 					{
 						modificar = new JButton("modificar");
