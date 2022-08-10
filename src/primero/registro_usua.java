@@ -97,7 +97,7 @@ public class registro_usua extends JFrame {
 			{
 				contraseña = new JPasswordField();
 				contraseña.setBounds(283, 79, 86, 20);
-				contentPane.add(contraseña)ñ
+				contentPane.add(contraseña);
 			}
 			{
 				lblNewLabel_2 = new JLabel("confirmar ");
