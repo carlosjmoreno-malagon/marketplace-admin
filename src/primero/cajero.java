@@ -2,12 +2,10 @@ package primero;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-
 import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -25,6 +23,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ScrollPaneConstants;
+import desarrollo.busproduc;
 
 public class cajero extends JFrame {
 
@@ -46,6 +45,9 @@ public class cajero extends JFrame {
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JButton borrar;
+	private int click;
+	public busproduc bp;
+	
 	
 	private void login() {
 	}
@@ -71,25 +73,21 @@ public class cajero extends JFrame {
                 return false;
             }
         };
+        modelo.addColumn("Id");
         modelo.addColumn("Nombre");
-        modelo.addColumn("precio");
-        modelo.addColumn("tamaño");
+        modelo.addColumn("Cantidad");
+        modelo.addColumn("Precio");
 
-        this.table.setModel(modelo);
-       String arreglo[]= new String[7];
-       int a=0 ;
-      /* while (a<8) {
-    	   arreglo[0] = "12222222";
-    	   arreglo[1] = "pepito peres";
-    	   arreglo[2] = "rodrigez";
-    	   arreglo[3] = "fluido";
-    	   arreglo[4] = "pepitofluido";
-    	   arreglo[5] = "0";
-    	   arreglo[6]  ="10";
+       this.table.setModel(modelo);
+       String arreglo[]= new String[3];
+       for(int i=0;i<click;i++) {
+    	   arreglo[0] = String.valueOf(i);
+    	   arreglo[1] = producto.getText();
+    	   arreglo[2] = can.getText();
+    	   arreglo[3] = precio.getText();
     	   modelo.addRow(arreglo);
-    	   a++;
-       }*/
-	   arreglo[0] = "12222222";
+       }
+	   /*arreglo[0] = "12222222";
 	   arreglo[1] = "pepito peres";
 	   arreglo[2] = "rodrigez";
 	   arreglo[3] = "fluido";
@@ -104,7 +102,7 @@ public class cajero extends JFrame {
 	   arreglo[4] = "pepi2";
 	   arreglo[5] = "12";
 	   arreglo[6]  ="13";
-	   modelo.addRow(arreglo);
+	   modelo.addRow(arreglo);*/
 	}
 	public void regresar() {
 		pagina1 x = new pagina1();
@@ -220,6 +218,11 @@ public class cajero extends JFrame {
 			producto.setBounds(24, 65, 142, 20);
 			contentPane.add(producto);
 			producto.setColumns(10);
+			producto.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					click+=1;
+				}
+			});
 		}
 		{
 			precio = new JTextField();
