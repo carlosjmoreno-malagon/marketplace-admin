@@ -2,15 +2,12 @@ package primero;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import desarrollo.Hash;
 import desarrollo_usuarios.SQLusuarios;
 import desarrollo_usuarios.usuarios;
-
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -40,7 +37,7 @@ public class inicio extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private usuarios mod;
-	public static JPasswordField contraseña;
+	public static JPasswordField contraseÃ±a;
 	public static JTextField id;
 
 	public void en(usuarios mod) {
@@ -52,7 +49,7 @@ public class inicio extends JFrame {
 	public void limpiar() {
 	id.setText("");
 	usuario.setText("");
-	contraseña.setText("");
+	contraseÃ±a.setText("");
 	}
 
 	public static void main(String[] args) {
@@ -89,12 +86,12 @@ public class inicio extends JFrame {
 					Date date = new Date();
 					DateFormat fechahora= new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
 					
-					String pas = new String(contraseña.getPassword());
+					String pas = new String(contraseÃ±a.getPassword());
 					if(!usuario.getText().equals("")&&!pas.equals("")) {
 						String newpas = Hash.sha1(pas);
 						
 						mod.setUsuario(usuario.getText());
-						mod.setContraseña(newpas);
+						mod.setContraseÃ±a(newpas);
 						mod.setLast_session(fechahora.format(date));
 						if(modsql.login(mod)) {
 							en(mod);
@@ -115,9 +112,9 @@ public class inicio extends JFrame {
 				id.setColumns(10);
 			}
 			{
-				contraseña = new JPasswordField();
-				contraseña.setBounds(333, 58, 86, 20);
-				contentPane.add(contraseña);
+				contraseÃ±a = new JPasswordField();
+				contraseÃ±a.setBounds(333, 58, 86, 20);
+				contentPane.add(contraseÃ±a);
 			}
 			entrar.setBounds(182, 98, 89, 23);
 			contentPane.add(entrar);

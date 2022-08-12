@@ -2,9 +2,7 @@ package desarrollo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JOptionPane;
-
 import primero.registro;
 
 public class controlador implements ActionListener {
@@ -34,7 +32,7 @@ public class controlador implements ActionListener {
 		if(e.getSource() == frm.guardar) {
 			mod.setNombre(frm.nombre.getText());
 			mod.setPrecio(Double.parseDouble(frm.precio.getText()));
-			mod.setPeso(Integer.parseInt(frm.tamaño.getText()));
+			mod.setPeso(Integer.parseInt(frm.tamaÃ±o.getText()));
 			if(modC.registrar(mod)) {
 				JOptionPane.showMessageDialog(null, "registro guardado");
 				limpiar();
@@ -47,7 +45,7 @@ public class controlador implements ActionListener {
 			mod.setId(Integer.parseInt(frm.id.getText()));
 			mod.setNombre(frm.nombre.getText());
 			mod.setPrecio(Double.parseDouble(frm.precio.getText()));
-			mod.setPeso(Integer.parseInt(frm.tamaño.getText()));
+			mod.setPeso(Integer.parseInt(frm.tamaÃ±o.getText()));
 			if(modC.modificar(mod)) {
 				JOptionPane.showMessageDialog(null, "registro modificado");
 				limpiar();
@@ -71,7 +69,7 @@ public class controlador implements ActionListener {
 			if(modC.buscar(mod)) {
 				frm.id.setText(String.valueOf(mod.getId()));
 				frm.precio.setText(String.valueOf(mod.getPrecio()));
-				frm.tamaño.setText(String.valueOf(mod.getPeso()));
+				frm.tamaÃ±o.setText(String.valueOf(mod.getPeso()));
 			}else {
 				JOptionPane.showMessageDialog(null, "error al Encintrar el producto");
 				limpiar();
@@ -82,7 +80,7 @@ public class controlador implements ActionListener {
 		frm.id.setText("");
 		frm.nombre.setText("");
 		frm.precio.setText("");
-		frm.tamaño.setText("");
+		frm.tamaÃ±o.setText("");
 	}
 	
 	

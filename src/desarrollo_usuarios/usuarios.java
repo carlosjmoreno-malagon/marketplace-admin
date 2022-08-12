@@ -3,7 +3,7 @@ package desarrollo_usuarios;
 public class usuarios {	
 private int id;
 private String usuario;
-private String contraseña;
+private String contraseÃ±a;
 private String nombre;
 private String last_session;
 private int id_tipo;
@@ -21,11 +21,11 @@ public String getUsuario() {
 public void setUsuario(String usuario) {
 	this.usuario = usuario;
 }
-public String getContraseña() {
-	return contraseña;
+public String getContraseÃ±a() {
+	return contraseÃ±a;
 }
-public void setContraseña(String contraseña) {
-	this.contraseña = contraseña;
+public void setContraseÃ±a(String contraseÃ±a) {
+	this.contraseÃ±a = contraseÃ±a;
 }
 public String getNombre() {
 	return nombre;
