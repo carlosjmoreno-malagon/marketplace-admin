@@ -37,7 +37,7 @@ public class registro_usua extends JFrame {
 	private JLabel lblNewLabel_1;
 	public static JPasswordField confirmar;
 	private JLabel lblNewLabel_2;
-	public static JPasswordField contraseña;
+	public static JPasswordField password;
 	private JTextField nombre;
 	private JComboBox estatus;
 	private JLabel lblNewLabel_4;
@@ -63,7 +63,7 @@ public class registro_usua extends JFrame {
 	private void limpiar() {
 
 		usuario.setText("");
-		contraseña.setText("");
+		password.setText("");
 		confirmar.setText("");
 		nombre.setText("");
 		
@@ -95,9 +95,9 @@ public class registro_usua extends JFrame {
 				nombre.setColumns(10);
 			}
 			{
-				contraseña = new JPasswordField();
-				contraseña.setBounds(283, 79, 86, 20);
-				contentPane.add(contraseña);
+				password = new JPasswordField();
+				password.setBounds(283, 79, 86, 20);
+				contentPane.add(password);
 			}
 			{
 				lblNewLabel_2 = new JLabel("confirmar ");
@@ -137,7 +137,7 @@ public class registro_usua extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					SQLusuarios modsql = new SQLusuarios();
 					usuarios mod =new usuarios();
-					String pas = new String(contraseña.getPassword());
+					String pas = new String(password.getPassword());
 					String conf = new String(confirmar.getPassword());
 					if(usuario.getText().equals("") || pas.equals("")||conf.equals("")||nombre.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "hey campos vacios, debe llenar todos los campos");
@@ -149,7 +149,7 @@ public class registro_usua extends JFrame {
 						
 						String newpas = Hash.sha1(pas);
 						mod.setUsuario(usuario.getText());
-						mod.setContraseña(newpas);
+						mod.setPassword(newpas);
 						mod.setNombre(nombre.getText());
 						String a;
 						int es = 0;

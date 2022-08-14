@@ -33,7 +33,7 @@ public class registro extends JFrame {
 	private JLabel lblNewLabel_2;
 	public  JButton borrar;
 	public  JButton modificar;
-	public  JTextField tamaño;
+	public  JTextField size;
 	private JLabel lblNewLabel_3;
 	public  JButton buscar;
 	public  JButton btnNewButton_1;
@@ -121,10 +121,10 @@ public class registro extends JFrame {
 						contentPane.add(lblNewLabel_3);
 					}
 					{
-						tamaño = new JTextField();
-						tamaño.setBounds(199, 150, 86, 20);
-						contentPane.add(tamaño);
-						tamaño.setColumns(10);
+						size = new JTextField();
+						size.setBounds(199, 150, 86, 20);
+						contentPane.add(size);
+						size.setColumns(10);
 					}
 					{
 						modificar = new JButton("modificar");
