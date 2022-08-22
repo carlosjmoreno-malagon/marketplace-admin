@@ -14,12 +14,12 @@ public class SQLusuarios extends coneccion {
 	PreparedStatement ps = null;
 	Connection con = getConnection();
 	
-	String sql = "INSERT INTO usuarios (usuario, contraseÃ±a, nombre, id_tipo) VALUES(?,?,?,?)";
+	String sql = "INSERT INTO usuarios (usuario, contraseña, nombre, id_tipo) VALUES(?,?,?,?)";
 
 	try {
 		ps = con.prepareStatement(sql);
 		ps.setString(1, usr.getUsuario());
-		ps.setString(2, usr.getContraseÃ±a());
+		ps.setString(2, usr.getContraseña());
 		ps.setString(3, usr.getNombre());
 		ps.setInt(4, usr.getId_tipo());
 		ps.execute();
@@ -60,7 +60,7 @@ public class SQLusuarios extends coneccion {
 	ResultSet rs = null;
 	Connection con = getConnection();
 	
-	String sql = "SELECT u.id,u.usuario,u.contraseÃ±a,u.nombre,u.id_tipo, t.nombre FROM usuarios AS u INNER JOIN tipo_usuario AS t ON u.id_tipo =t.id WHERE usuario = ?";
+	String sql = "SELECT u.id,u.usuario,u.contraseña,u.nombre,u.id_tipo, t.nombre FROM usuarios AS u INNER JOIN tipo_usuario AS t ON u.id_tipo=t.id WHERE usuario =?";
 
 	try {
 		ps = con.prepareStatement(sql);
@@ -68,8 +68,8 @@ public class SQLusuarios extends coneccion {
 
 		rs=ps.executeQuery();
 		if(rs.next()) {
-			if(usr.getContraseÃ±a().equals(rs.getString(3))) {
-				String sqlupdate = " UPDATE usuarios SET last_session=? WHERE id = ?";
+			if(usr.getContraseña().equals(rs.getString(3))) {
+				String sqlupdate = "UPDATE usuarios SET last_session=? WHERE id = ?";
 				ps= con.prepareStatement(sqlupdate);
 				ps.setString(1, usr.getLast_session());
 				ps.setInt(2, rs.getInt(1));

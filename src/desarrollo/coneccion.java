@@ -10,9 +10,9 @@ import javax.swing.JPasswordField;
 
 public class coneccion {
 	public static final String base = "exito_chafa";
-	public static final String USERNAME = "root";
-	public static final String PASSWORD = "123456";
-	public static final String URL = "jdbc:mysql://localhost:3306/"+ base;
+	public static final String USERNAME = "exito_admin@exito-server";
+	public static final String PASSWORD = "Exipasipassword1";
+	public static final String URL = "jdbc:mysql://exito-server.mysql.database.azure.com/"+ base;
 	private Connection con=null; 
 	public Connection getConnection() {
 		 try {

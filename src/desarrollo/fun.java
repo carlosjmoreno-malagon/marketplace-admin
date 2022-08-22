@@ -1,47 +1,53 @@
 package desarrollo;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 
-import primero.cajero;
-import primero.registro;
+import javax.swing.JPanel;
 
-public class fun implements ActionListener {
-	private busproduc mod;
-	private consultas modC;
-	private cajero frm;
-	public fun(busproduc mod, consultas modC,  cajero frm) {
-		this.mod = mod;
-		this.modC = modC;
-		this.frm = frm;
-		this.frm.buscar.addActionListener(this);
-	}
-	public void iniciar() {
-		frm.setTitle("productos");
-		frm.setLocationRelativeTo(null);
+public class fun extends JPanel{
+
+	fun()
+	{
+		
+		GridLayout layout = new GridLayout(10,1);
+		layout.setVgap(5);
+		
+		this.setLayout(layout);
+		this.setPreferredSize(new Dimension(400,560));
 		
 	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == frm.buscar) {
-			mod.setNombre(frm.producto.getText());
-			if(modC.buscar(mod)) {
-				frm.id.setText(String.valueOf(mod.getId()));
-				frm.precio.setText(String.valueOf(mod.getPrecio()));
-				frm.can.setText(String.valueOf(mod.getPeso()));
-			}else {
-				JOptionPane.showMessageDialog(null, "error al Encintrar el producto");
-				limpiar();
+	
+	public void updateNumbers()
+	{
+		Component[] listItems = this.getComponents();
+		
+		for(int i = 0;i<listItems.length;i++)
+		{
+			if(listItems[i] instanceof productos)
+			{
+				((productos)listItems[i]).changeIndex(i+1);
 			}
 		}
+		
 	}
-	public void limpiar() {
-		frm.id.setText("");
-		frm.producto.setText("");
-		frm.precio.setText("");
-		frm.can.setText("");
+	
+	public void removeCompletedTasks()
+	{
+		
+		for(Component c : getComponents())
+		{
+			if(c instanceof productos)
+			{
+				if(((productos)c).getState())
+				{
+					remove(c);
+					updateNumbers();
+				}
+			}
+		}
+		
 	}
 }
-	
