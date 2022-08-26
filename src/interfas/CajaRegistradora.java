@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import desarrollo.TextPrompt;
@@ -25,8 +26,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JPasswordField;
 import desarrollo.productos;
+import javax.swing.JScrollBar;
+import javax.swing.table.DefaultTableModel;
 public class CajaRegistradora extends JFrame {
 
 	private JPanel contentPane;
@@ -34,6 +38,7 @@ public class CajaRegistradora extends JFrame {
 	private JTextField cantidadDeProducto;
 	private usuarios mod;
 	private JPanel btnAgregar;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -142,31 +147,37 @@ public class CajaRegistradora extends JFrame {
 		lblNewLabel_4.setBounds(10, 4, 230, 35);
 		btnRecibo.add(lblNewLabel_4);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(445, 39, 400, 500);
-		panelCaja.add(panel);
-		panel.setLayout(null);
-		{
-			btnAgregar = new JPanel();
-			btnAgregar.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					productos p = new productos();
-				}
-			});
-			btnAgregar.setBackground(new Color(37,60,120));
-			btnAgregar.setBounds(60, 356, 250, 33);
-			panelCaja.add(btnAgregar);
-			btnAgregar.setLayout(null);
+		JPanel panelDeProductos = new JPanel();
+		panelDeProductos.setBackground(Color.WHITE);
+		panelDeProductos.setBounds(445, 39, 400, 500);
+		panelCaja.add(panelDeProductos);
+		panelDeProductos.setLayout(null);
+		
+		//tabla
+		String[] nombreColumnas = {"Nombre","Cantidad","Precio"};
+		Object[][] data = {{"Arroz 500g", 3, 6000},{"3D Multiusos",2, 5000}};
+		table = new JTable();
+		table.setModel(new DefaultTableModel(data, nombreColumnas));
+		table.setFont(new Font("Arial", Font.PLAIN, 14));
+		table.setBounds(0, 0, 400, 500);
+		panelDeProductos.add(table);
+		
+		btnAgregar = new JPanel();
+		btnAgregar.setBackground(new Color(37,60,120));
+		btnAgregar.setBounds(60, 350, 250, 40);
+		btnAgregar.setLayout(null);
+		btnAgregar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		panelCaja.add(btnAgregar);
 			
-			JLabel lblNewLabel_2 = new JLabel("AGREGAR PRODUCTO");
-			lblNewLabel_2.setBounds(20, 0, 209, 33);
-			btnAgregar.add(lblNewLabel_2);
-			lblNewLabel_2.setIcon(new ImageIcon(CajaRegistradora.class.getResource("/primero/img/carrito-de-compras.png")));
-			lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
-			lblNewLabel_2.setForeground(Color.WHITE);
-			lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 16));
+		JLabel lblNewLabel_2 = new JLabel("AGREGAR PRODUCTO");
+		lblNewLabel_2.setBounds(20, 5, 209, 33);
+		btnAgregar.add(lblNewLabel_2);
+		lblNewLabel_2.setIcon(new ImageIcon(CajaRegistradora.class.getResource("/primero/img/carrito-de-compras.png")));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 16));
+		
+
+		
 		}
-	}
 }

@@ -72,10 +72,10 @@ public class Login1 extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Login1.class.getResource("/primero/img/MarketPlace-Admin.jpg")));
 		complement();
 		TextPrompt usu = new TextPrompt("Digite su usuario",usuario) ;
-		TextPrompt con = new TextPrompt("Digite su contraseña", password);
+		TextPrompt con = new TextPrompt("Digite su contraseÃ±a", password);
 		con.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt usuR = new TextPrompt("Digite su usuario", usuarioR);
-		TextPrompt conR = new TextPrompt("Digite su contraseña", passwordR);
+		TextPrompt conR = new TextPrompt("Digite su contraseÃ±a", passwordR);
 		conR.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt nom = new TextPrompt("Digite su nombre", nombreR);
 	}
@@ -169,7 +169,7 @@ public class Login1 extends JFrame {
 						System.out.println(pas);
 					String newpas = Hash.sha1(pas);
 					mod.setUsuario(usuarioR.getText());
-					mod.setContraseña(newpas);
+					mod.setContraseÃ±a(newpas);
 					mod.setNombre(nombreR.getText());
 					String a;
 					int es = 0;
@@ -305,7 +305,7 @@ public class Login1 extends JFrame {
 					String newpas = Hash.sha1(pas);
 					
 					mod.setUsuario(usuario.getText());
-					mod.setContraseña(newpas);
+					mod.setContraseÃ±a(newpas);
 					mod.setLast_session(fechahora.format(date));
 					
 					if(modsql.login(mod)) {
