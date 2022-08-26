@@ -1,12 +1,18 @@
 
 # Clonar repositorio
  
- * `git clone [link del repositorio]`
+ ```sh
+ git clone [link del repositorio]
+ ```
  
 # Actualizar repositorio
  
-  * `git pull origin master`
+   ```sh
+   git pull origin master
+   ```
 
 # Subir actualizacion
 
-  * `git push origin maste`
+   ```sh
+   git push origin maste
+   ```
