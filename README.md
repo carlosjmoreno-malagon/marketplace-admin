@@ -14,5 +14,5 @@
 # Subir actualizacion
 
    ```sh
-   git push origin maste
+   git push origin master
    ```
