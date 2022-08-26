@@ -160,10 +160,9 @@ public class Login1 extends JFrame {
 				usuarios mod =new usuarios();
 				String pas = new String(passwordR.getPassword());
 				if(usuarioR.getText().equals("") || pas.equals("")||nombreR.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "hey campos vacios, debe llenar todos los campos");
+					JOptionPane.showMessageDialog(null, "hey!! Hay campos vacios, debe llenar todos los campos");
 				}else {
-				
-				
+
 					if(modsql.existeusuario(usuarioR.getText())==0) {
 						
 						System.out.println(pas);
@@ -181,8 +180,9 @@ public class Login1 extends JFrame {
 					}
 					mod.setId_tipo(es);
 					if(modsql.registrar(mod)) {
-						JOptionPane.showMessageDialog(null, "el registro guardodo");
+						JOptionPane.showMessageDialog(null, "el registro guardado");
 						limpiar();
+						JOptionPane.showMessageDialog(null, "Ya esta registrado, vaya al apartado de al lado para iniciar su sesion");
 					}
 					else {
 						JOptionPane.showMessageDialog(null, "error al guardar");
@@ -191,10 +191,7 @@ public class Login1 extends JFrame {
 				}else {
 					JOptionPane.showMessageDialog(null, "El usuario ya existe");
 				}
-					
-					
-			
-				
+									
 				}
 			}
 
