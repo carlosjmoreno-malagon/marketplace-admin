@@ -8,11 +8,11 @@ import java.sql.SQLException;
 import desarrollo.coneccion;
 
 public class SQLusuarios extends coneccion {
-
-	public boolean registrar(usuarios usr) {
-
 	PreparedStatement ps = null;
 	Connection con = getConnection();
+	public boolean registrar(usuarios usr) {
+
+	
 	
 	String sql = "INSERT INTO usuarios (usuario, contraseña, nombre, id_tipo) VALUES(?,?,?,?)";
 

@@ -24,11 +24,9 @@ public class Administrador extends JFrame {
 	private JPanel contentPane;
 	public JTextField idProductoA;
 	public JTextField nombreDelProductoA;
-	public JTextField cantidadDeStockA;
 	public JTextField precioDelProductoA;
 	public JTextField editarID;
 	public JTextField editarNombreDelProducto;
-	public JTextField editarCantidad;
 	public JTextField editarPrecio;
 	public JPanel btnAgregarDB;
 	private JLabel lblNewLabel_4;
@@ -59,11 +57,8 @@ public class Administrador extends JFrame {
 		components();
 		TextPrompt id = new TextPrompt("Digite el ID del producto",editarID); 
 		TextPrompt nom = new TextPrompt("Digite el nombre del producto",editarNombreDelProducto); 
-		TextPrompt cant = new TextPrompt("Digite la cantidad en stock",editarCantidad); 
-		cant.setFont(new Font("Arial", Font.PLAIN, 12));
 		TextPrompt precio = new TextPrompt("Digite el precio del producto",editarPrecio); 
 		TextPrompt idA = new TextPrompt("Digite el ID del producto",idProductoA); 
-		TextPrompt cantA = new TextPrompt("Digite la cantidad en stock",cantidadDeStockA);
 		TextPrompt nomA = new TextPrompt("Digite el nombre del producto",nombreDelProductoA);
 		TextPrompt precioA = new TextPrompt("Digite el precio del producto",precioDelProductoA); 
 	}
@@ -150,25 +145,6 @@ public class Administrador extends JFrame {
 		separator_1_1.setBounds(270, 509, 150, 5);
 		panelAdmin.add(separator_1_1);
 		
-		JLabel lblNewLabel_3_2 = new JLabel("Cantidad en Stock");
-		lblNewLabel_3_2.setFont(new Font("Arial", Font.PLAIN, 16));
-		lblNewLabel_3_2.setBounds(467, 341, 140, 14);
-		panelAdmin.add(lblNewLabel_3_2);
-		
-		cantidadDeStockA = new JTextField();
-		cantidadDeStockA.setForeground(Color.GRAY);
-		cantidadDeStockA.setBorder(null);
-		cantidadDeStockA.setFont(new Font("Arial", Font.PLAIN, 12));
-		cantidadDeStockA.setColumns(10);
-		cantidadDeStockA.setBackground(Color.WHITE);
-		cantidadDeStockA.setBounds(477, 366, 150, 30);
-		panelAdmin.add(cantidadDeStockA);
-		
-		JSeparator separator_1_2 = new JSeparator();
-		separator_1_2.setForeground(Color.BLACK);
-		separator_1_2.setBounds(477, 407, 150, 5);
-		panelAdmin.add(separator_1_2);
-		
 		JLabel lblNewLabel_3_3 = new JLabel("Precio del producto");
 		lblNewLabel_3_3.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel_3_3.setBounds(467, 443, 140, 22);
@@ -231,25 +207,6 @@ public class Administrador extends JFrame {
 		separator_1_1_1.setBounds(270, 240, 150, 5);
 		panelAdmin.add(separator_1_1_1);
 		
-		JLabel lblNewLabel_3_2_1 = new JLabel("Cantidad en Stock");
-		lblNewLabel_3_2_1.setFont(new Font("Arial", Font.PLAIN, 16));
-		lblNewLabel_3_2_1.setBounds(467, 72, 140, 14);
-		panelAdmin.add(lblNewLabel_3_2_1);
-		
-		editarCantidad = new JTextField();
-		editarCantidad.setForeground(Color.GRAY);
-		editarCantidad.setFont(new Font("Arial", Font.PLAIN, 11));
-		editarCantidad.setColumns(10);
-		editarCantidad.setBorder(null);
-		editarCantidad.setBackground(Color.WHITE);
-		editarCantidad.setBounds(477, 97, 150, 30);
-		panelAdmin.add(editarCantidad);
-		
-		JSeparator separator_1_2_1 = new JSeparator();
-		separator_1_2_1.setForeground(Color.BLACK);
-		separator_1_2_1.setBounds(477, 138, 150, 5);
-		panelAdmin.add(separator_1_2_1);
-		
 		JLabel lblNewLabel_3_3_1 = new JLabel("Precio del producto");
 		lblNewLabel_3_3_1.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel_3_3_1.setBounds(467, 174, 140, 22);
@@ -277,7 +234,7 @@ public class Administrador extends JFrame {
 			});
 			btnAgregarDB.setLayout(null);
 			btnAgregarDB.setBackground(new Color(37, 60, 120));
-			btnAgregarDB.setBounds(669, 366, 200, 50);
+			btnAgregarDB.setBounds(669, 380, 200, 50);
 			panelAdmin.add(btnAgregarDB);
 			{
 				lblNewLabel_4 = new JLabel("Agregar nuevo producto");
@@ -291,7 +248,7 @@ public class Administrador extends JFrame {
 		{
 			btnBuscarAD = new JPanel();
 			btnBuscarAD.setBackground(new Color(37,60,120));
-			btnBuscarAD.setBounds(669, 443, 200, 55);
+			btnBuscarAD.setBounds(669, 174, 200, 55);
 			panelAdmin.add(btnBuscarAD);
 			btnBuscarAD.setLayout(null);
 			{

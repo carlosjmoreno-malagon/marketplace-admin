@@ -1,9 +1,11 @@
 package desarrollo;
 
-public class busproduc {
-private int id;
-private String nombre;
-private double precio;
+public class rcb {
+String nombre;
+double precio;
+int tamaño;
+int id;
+
 public int getId() {
 	return id;
 }
@@ -21,6 +23,12 @@ public double getPrecio() {
 }
 public void setPrecio(double precio) {
 	this.precio = precio;
+}
+public int getTamaño() {
+	return tamaño;
+}
+public void setTamaño(int tamaño) {
+	this.tamaño = tamaño;
 }
 
 }

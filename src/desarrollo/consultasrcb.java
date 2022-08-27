@@ -5,17 +5,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class consultas extends coneccion {
-
-	public boolean registrar(busproduc pro) {
+public class consultasrcb extends coneccion{
+	public boolean registrar(rcb pro) {
 		PreparedStatement ps;
 		Connection con = getConnection();
-		String sql = "INSERT INTO productos (productos, precio,id) VALUES(?,?,?)";
+		String sql = "INSERT INTO recibo (nombre, precio,tamaño,id) VALUES(?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, pro.getNombre());
 			ps.setDouble(2, pro.getPrecio());
-			ps.setInt(3, pro.getId());
+			ps.setDouble(3, pro.getTamaño());
+			ps.setInt(4, pro.getId());
 			ps.execute();
 			return true;
 		}catch(SQLException e) {
@@ -34,16 +34,17 @@ public class consultas extends coneccion {
 	
 	
 	
-	public boolean modificar(busproduc pro) {
+	public boolean modificar(rcb pro) {
 		PreparedStatement ps;
 		Connection con = getConnection();
 		
-		String sql = "UPDATE  productos SET productos=?, precio=? WHERE id=?";
+		String sql = "UPDATE  recibo SET nombre=?, precio=?,tamaño=? WHERE id=?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, pro.getNombre());
 			ps.setDouble(2, pro.getPrecio());
-			ps.setInt(3, pro.getId());
+			ps.setDouble(3, pro.getTamaño());
+			ps.setInt(4, pro.getId());
 			ps.execute();
 			return true;
 		}catch(SQLException e) {
@@ -61,14 +62,13 @@ public class consultas extends coneccion {
 	}
 	
 	
-	public boolean eliminar(busproduc pro) {
+	public boolean eliminar(rcb pro) {
 		PreparedStatement ps = null;
 		Connection con = getConnection();
 		
-		String sql = "DELETE FROM  productos WHERE id=?";
+		String sql = "DELETE FROM  recibo";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, pro.getId());
 			ps.execute();
 			return true;
 		}catch(SQLException e) {
@@ -84,7 +84,7 @@ public class consultas extends coneccion {
 		
 		
 	}
-	public boolean buscar(busproduc pro) {
+	public boolean buscar(rcb pro) {
 		PreparedStatement ps=null;
 		ResultSet res=null;
 		Connection con = getConnection();

@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import desarrollo.Cajacnt;
 import desarrollo.Hash;
 import desarrollo_usuarios.SQLusuarios;
 import desarrollo_usuarios.usuarios;
@@ -36,7 +37,7 @@ import desarrollo.consultas;
 import desarrollo.controlador;
 
 import java.awt.Toolkit;
-public class Login1 extends JFrame {
+public class Login1 extends JFrame  {
 
 	private JPanel contentPane;
 	private JTextField usuarioR;
@@ -75,6 +76,7 @@ public class Login1 extends JFrame {
 		TextPrompt con = new TextPrompt("Digite su contraseña", password);
 		con.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt usuR = new TextPrompt("Digite su usuario", usuarioR);
+		usuR.setForeground(Color.BLACK);
 		TextPrompt conR = new TextPrompt("Digite su contraseña", passwordR);
 		conR.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt nom = new TextPrompt("Digite su nombre", nombreR);
@@ -82,6 +84,7 @@ public class Login1 extends JFrame {
 	public void complement() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SQLusuarios modsql = new SQLusuarios();
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
@@ -154,9 +157,16 @@ public class Login1 extends JFrame {
 		
 		JPanel btnRegistro = new JPanel();
 		btnRegistro.addMouseListener(new MouseAdapter() {
+
+
+			private void limpiar() {
+				usuarioR.setText("");
+				passwordR.setText("");
+				nombreR.setText("");
+			}
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				SQLusuarios modsql = new SQLusuarios();
+			public void mousePressed(MouseEvent e) {
+				
 				usuarios mod =new usuarios();
 				String pas = new String(passwordR.getPassword());
 				if(usuarioR.getText().equals("") || pas.equals("")||nombreR.getText().equals("")) {
@@ -196,12 +206,6 @@ public class Login1 extends JFrame {
 			
 				
 				}
-			}
-
-			private void limpiar() {
-				usuarioR.setText("");
-				passwordR.setText("");
-				nombreR.setText("");
 			}
 		});
 		btnRegistro.setBackground(new Color(243, 255, 198));
@@ -291,9 +295,9 @@ public class Login1 extends JFrame {
 		btnSesion.addMouseListener(new MouseAdapter() {
 			private usuarios mod;
 
+			
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				
+			public void mousePressed(MouseEvent e) {
 				SQLusuarios modsql = new SQLusuarios();
 				usuarios mod = new usuarios();
 				
@@ -322,7 +326,6 @@ public class Login1 extends JFrame {
 				}else {
 					JOptionPane.showMessageDialog(null, "Debe ingresar datos");
 				}
-				
 			}
 		});
 		btnSesion.setBackground(new Color(28,82,83));
@@ -348,9 +351,13 @@ public class Login1 extends JFrame {
 	
 
 	protected void en() {
-	CajaRegistradora x = new CajaRegistradora();
-	x.setVisible(true);
-	this.dispose();
+		busproduc mod1 = new busproduc();
+		consultas modc = new consultas();
+		CajaRegistradora x = new CajaRegistradora();
+		Cajacnt ctr = new Cajacnt(mod1,modc,x);
+		ctr.iniciar();
+		x.setVisible(true);
+		this.dispose();
 	}
 	public void ent() {
 		busproduc mod1 = new busproduc();

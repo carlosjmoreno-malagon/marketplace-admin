@@ -37,21 +37,25 @@ public class controlador implements MouseListener {
 		frm.editarID.setText("");
 		frm.editarNombreDelProducto.setText("");
 		frm.editarPrecio.setText("");
-		frm.editarCantidad.setText("");
 	}
 	public void limpiar2() {
 		frm.idProductoA.setText("");
 		frm.nombreDelProductoA.setText("");
 		frm.precioDelProductoA.setText("");
-		frm.cantidadDeStockA.setText("");
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
 		if(e.getSource() == frm.btnAgregarDB) {
+			mod.setId(Integer.parseInt(frm.idProductoA.getText()));
 			mod.setNombre(frm.nombreDelProductoA.getText());
 			mod.setPrecio(Double.parseDouble(frm.precioDelProductoA.getText()));
-			mod.setPeso(Integer.parseInt(frm.cantidadDeStockA.getText()));
 			if(modC.registrar(mod)) {
 				JOptionPane.showMessageDialog(null, "registro guardado");
 				limpiar2();
@@ -64,7 +68,6 @@ public class controlador implements MouseListener {
 			mod.setId(Integer.parseInt(frm.editarPrecio.getText()));
 			mod.setNombre(frm.editarNombreDelProducto.getText());
 			mod.setPrecio(Double.parseDouble(frm.editarPrecio.getText()));
-			mod.setPeso(Integer.parseInt(frm.editarCantidad.getText()));
 			if(modC.modificar(mod)) {
 				JOptionPane.showMessageDialog(null, "registro modificado");
 				limpiar();
@@ -88,18 +91,11 @@ public class controlador implements MouseListener {
 			if(modC.buscar(mod)) {
 				frm.editarID.setText(String.valueOf(mod.getId()));
 				frm.editarPrecio.setText(String.valueOf(mod.getPrecio()));
-				frm.editarCantidad.setText(String.valueOf(mod.getPeso()));
 			}else {
 				JOptionPane.showMessageDialog(null, "error al Encintrar el producto");
 				limpiar();
 			}
 		}
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
