@@ -56,18 +56,19 @@ public class Administrador extends JFrame {
 	 * Create the frame.
 	 */
 	public Administrador() {
-		components();
+		componentes();
 		TextPrompt id = new TextPrompt("Digite el ID del producto",editarID); 
 		TextPrompt nom = new TextPrompt("Digite el nombre del producto",editarNombreDelProducto); 
 		TextPrompt cant = new TextPrompt("Digite la cantidad en stock",editarCantidad); 
-		cant.setFont(new Font("Arial", Font.PLAIN, 12));
 		TextPrompt precio = new TextPrompt("Digite el precio del producto",editarPrecio); 
 		TextPrompt idA = new TextPrompt("Digite el ID del producto",idProductoA); 
 		TextPrompt cantA = new TextPrompt("Digite la cantidad en stock",cantidadDeStockA);
 		TextPrompt nomA = new TextPrompt("Digite el nombre del producto",nombreDelProductoA);
 		TextPrompt precioA = new TextPrompt("Digite el precio del producto",precioDelProductoA); 
+		cant.setFont(new Font("Arial", Font.PLAIN, 12));
+		
 	}
-	public void components() {
+	public void componentes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
@@ -78,30 +79,49 @@ public class Administrador extends JFrame {
 		
 		JPanel panelAdmin = new JPanel();
 		panelAdmin.setBackground(Color.WHITE);
-		panelAdmin.setBounds(0, 0, 910, 600);
+		panelAdmin.setBounds(0, 0, 900, 600);
 		contentPane.add(panelAdmin);
 		panelAdmin.setLayout(null);
 		
 		JPanel panelVentas = new JPanel();
-		panelVentas.setBounds(-10, 0, 250, 600);
+		panelVentas.setBounds(0, 0, 250, 600);
 		panelVentas.setBackground(new Color(243, 255, 198));
 		panelAdmin.add(panelVentas);
 		panelVentas.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Bienvenido Admin");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 24));
-		lblNewLabel.setBounds(25, 85, 200, 30);
+		lblNewLabel.setBounds(23, 21, 200, 30);
 		panelVentas.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Dinero recaudado:");
 		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(10, 258, 130, 30);
+		lblNewLabel_1.setBounds(10, 62, 130, 30);
 		panelVentas.add(lblNewLabel_1);
 		
 		JLabel dinero = new JLabel("$99999999");
 		dinero.setFont(new Font("Arial", Font.PLAIN, 16));
-		dinero.setBounds(150, 258, 92, 30);
+		dinero.setBounds(150, 62, 92, 30);
 		panelVentas.add(dinero);
+		
+		JPanel btnRegistrarUsuarios = new JPanel();
+		btnRegistrarUsuarios.setBackground(Color.WHITE);
+		btnRegistrarUsuarios.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnRegistrarUsuarios.setBounds(23, 500, 200, 40);
+		panelVentas.add(btnRegistrarUsuarios);
+		btnRegistrarUsuarios.setLayout(null);
+		btnRegistrarUsuarios.addMouseListener(new MouseAdapter() {
+			
+			public void MousePressed(MouseEvent e) {
+				
+			}
+		});
+		
+		JLabel lblNewLabel_7 = new JLabel("Editar usuarios");
+		lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblNewLabel_7.setBounds(40, 6, 120, 29);
+		btnRegistrarUsuarios.add(lblNewLabel_7);
+		
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(250, 279, 650, 10);
@@ -319,4 +339,6 @@ public class Administrador extends JFrame {
 			}
 		}
 	}
+	
 }
+

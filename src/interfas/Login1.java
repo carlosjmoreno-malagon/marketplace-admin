@@ -67,6 +67,13 @@ public class Login1 extends JFrame {
 	 * Create the frame.
 	 */
 	public Login1() {
+		componentes();
+		TextPrompt usu = new TextPrompt("Digite su usuario",usuario) ;
+		TextPrompt con = new TextPrompt("Digite su contraseña", password);
+		con.setFont(new Font("Arial", Font.PLAIN, 14));
+	}
+	
+	public void componentes() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Login1.class.getResource("/primero/img/MarketPlace-Admin.jpg")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,9 +83,7 @@ public class Login1 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		TextPrompt usu = new TextPrompt("Digite su usuario",usuario) ;
-		TextPrompt con = new TextPrompt("Digite su contraseña", password);
-		con.setFont(new Font("Arial", Font.PLAIN, 14));
+		
 		
 
 		JPanel panelSesion = new JPanel();
@@ -183,7 +188,6 @@ public class Login1 extends JFrame {
 			panelSesion.add(password);
 		}
 	}
-	
 
 	protected void en() {
 	CajaRegistradora x = new CajaRegistradora();

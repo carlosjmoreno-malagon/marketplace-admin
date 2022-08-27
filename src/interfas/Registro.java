@@ -54,16 +54,18 @@ public class Registro extends JFrame {
 	private JLabel lblNewLabel_7;
 	private JSeparator separator_4;
 	public Registro() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		componentes();
 		TextPrompt usuR = new TextPrompt("Digite su usuario", usuarioR);
 		TextPrompt conR = new TextPrompt("Digite su contraseña", passwordR);
-		conR.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt nom = new TextPrompt("Digite su nombre", nombreR);
+		conR.setFont(new Font("Arial", Font.PLAIN, 14));
+	}
+	public void componentes() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 900, 600);
+		contentPane = new JPanel();
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
 		JPanel panelRegistro = new JPanel();
 		panelRegistro.setBackground(new Color(28,82,83));
 		panelRegistro.setBounds(0, 0, 450, 600);
@@ -214,7 +216,5 @@ public class Registro extends JFrame {
 		passwordR.setBorder(null);
 		passwordR.setBounds(55, 333, 250, 20);
 		panelRegistro.add(passwordR);
-		
 	}
-
 }
