@@ -111,10 +111,11 @@ public class Administrador extends JFrame {
 		panelVentas.add(btnRegistrarUsuarios);
 		btnRegistrarUsuarios.setLayout(null);
 		btnRegistrarUsuarios.addMouseListener(new MouseAdapter() {
-			
-			public void MousePressed(MouseEvent e) {
-				
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				entrarARegistro();
 			}
+
 		});
 		
 		JLabel lblNewLabel_7 = new JLabel("Editar usuarios");
@@ -297,6 +298,7 @@ public class Administrador extends JFrame {
 			});
 			btnAgregarDB.setLayout(null);
 			btnAgregarDB.setBackground(new Color(37, 60, 120));
+			btnAgregarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			btnAgregarDB.setBounds(669, 366, 200, 50);
 			panelAdmin.add(btnAgregarDB);
 			{
@@ -312,6 +314,7 @@ public class Administrador extends JFrame {
 			btnBuscarAD = new JPanel();
 			btnBuscarAD.setBackground(new Color(37,60,120));
 			btnBuscarAD.setBounds(669, 443, 200, 50);
+			btnBuscarAD.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			panelAdmin.add(btnBuscarAD);
 			btnBuscarAD.setLayout(null);
 			{
@@ -327,6 +330,7 @@ public class Administrador extends JFrame {
 			btnEditarDB = new JPanel();
 			btnEditarDB.setBackground(new Color(37,60,120));
 			btnEditarDB.setBounds(669, 93, 200, 50);
+			btnEditarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			panelAdmin.add(btnEditarDB);
 			btnEditarDB.setLayout(null);
 			{
@@ -342,6 +346,7 @@ public class Administrador extends JFrame {
 		JPanel btnEliminarDB = new JPanel();
 		btnEliminarDB.setBackground(new Color(37, 60, 120));
 		btnEliminarDB.setBounds(669, 174, 200, 50);
+		btnEliminarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panelAdmin.add(btnEliminarDB);
 		btnEliminarDB.setLayout(null);
 		
@@ -351,6 +356,12 @@ public class Administrador extends JFrame {
 		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_8.setBounds(42, 8, 110, 30);
 		btnEliminarDB.add(lblNewLabel_8);
+	}
+	
+	public void entrarARegistro() {
+		Registro x = new Registro();
+		x.setVisible(true);
+		this.dispose();
 	}
 	
 }

@@ -266,5 +266,53 @@ public class Registro extends JFrame {
 		separator_5.setBackground(Color.BLACK);
 		separator_5.setBounds(472, 156, 250, 10);
 		panelRegistro.add(separator_5);
+		
+		JPanel btnElimnarDB = new JPanel();
+		btnElimnarDB.setBackground(new Color(37, 60, 120));
+		btnElimnarDB.setBounds(543, 191, 200, 50);
+		btnElimnarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		panelRegistro.add(btnElimnarDB);
+		btnElimnarDB.setLayout(null);
+		
+		JLabel lblNewLabel_6 = new JLabel("ELIMINAR");
+		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 16));
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setForeground(Color.WHITE);
+		lblNewLabel_6.setBounds(55, 17, 82, 14);
+		btnElimnarDB.add(lblNewLabel_6);
+		
+		JSeparator separator_6 = new JSeparator();
+		separator_6.setForeground(Color.BLACK);
+		separator_6.setBackground(Color.BLACK);
+		separator_6.setBounds(411, 297, 473, 5);
+		panelRegistro.add(separator_6);
+		
+		JPanel btnVolver = new JPanel();
+		btnVolver.setBackground(new Color(37, 60, 120));
+		btnVolver.setBounds(565, 409, 200, 50);
+		btnVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		panelRegistro.add(btnVolver);
+		btnVolver.setLayout(null);
+		btnVolver.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				volverAAdministrador();
+			}
+
+
+		});
+		
+		JLabel lblNewLabel_8 = new JLabel("Volver a Administrar");
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 16));
+		lblNewLabel_8.setForeground(Color.WHITE);
+		lblNewLabel_8.setBounds(10, 11, 180, 28);
+		btnVolver.add(lblNewLabel_8);
+	}
+	
+	public void volverAAdministrador() {
+		Administrador x = new Administrador();
+		x.setVisible(true);
+		this.dispose();
 	}
 }
