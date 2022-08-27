@@ -57,15 +57,10 @@ public class Administrador extends JFrame {
 		componentes();
 		TextPrompt id = new TextPrompt("Digite el ID del producto",editarID); 
 		TextPrompt nom = new TextPrompt("Digite el nombre del producto",editarNombreDelProducto); 
-<<<<<<< HEAD
-=======
-		TextPrompt cant = new TextPrompt("Digite la cantidad en stock",editarCantidad); 
->>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 		TextPrompt precio = new TextPrompt("Digite el precio del producto",editarPrecio); 
 		TextPrompt idA = new TextPrompt("Digite el ID del producto",idProductoA); 
 		TextPrompt nomA = new TextPrompt("Digite el nombre del producto",nombreDelProductoA);
 		TextPrompt precioA = new TextPrompt("Digite el precio del producto",precioDelProductoA); 
-		cant.setFont(new Font("Arial", Font.PLAIN, 12));
 		
 	}
 	public void componentes() {
@@ -197,7 +192,7 @@ public class Administrador extends JFrame {
 		
 		JLabel lblNewLabel_3_4 = new JLabel("ID(Opcional)");
 		lblNewLabel_3_4.setFont(new Font("Arial", Font.PLAIN, 16));
-		lblNewLabel_3_4.setBounds(260, 72, 92, 22);
+		lblNewLabel_3_4.setBounds(260, 73, 92, 22);
 		panelAdmin.add(lblNewLabel_3_4);
 		
 		editarID = new JTextField();
@@ -260,12 +255,8 @@ public class Administrador extends JFrame {
 			});
 			btnAgregarDB.setLayout(null);
 			btnAgregarDB.setBackground(new Color(37, 60, 120));
-<<<<<<< HEAD
-			btnAgregarDB.setBounds(669, 380, 200, 50);
-=======
 			btnAgregarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			btnAgregarDB.setBounds(669, 366, 200, 50);
->>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 			panelAdmin.add(btnAgregarDB);
 			{
 				lblNewLabel_4 = new JLabel("Agregar nuevo producto");
@@ -279,12 +270,9 @@ public class Administrador extends JFrame {
 		{
 			btnBuscarAD = new JPanel();
 			btnBuscarAD.setBackground(new Color(37,60,120));
-<<<<<<< HEAD
 			btnBuscarAD.setBounds(669, 174, 200, 55);
-=======
-			btnBuscarAD.setBounds(669, 443, 200, 50);
 			btnBuscarAD.setCursor(new Cursor(Cursor.HAND_CURSOR));
->>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
+
 			panelAdmin.add(btnBuscarAD);
 			btnBuscarAD.setLayout(null);
 			{

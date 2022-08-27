@@ -3,7 +3,7 @@ package desarrollo;
 public class rcb {
 String nombre;
 double precio;
-int tamaño;
+int tamaÃ±o;
 int id;
 
 public int getId() {
@@ -24,11 +24,11 @@ public double getPrecio() {
 public void setPrecio(double precio) {
 	this.precio = precio;
 }
-public int getTamaño() {
-	return tamaño;
+public int getTamaÃ±o() {
+	return tamaÃ±o;
 }
-public void setTamaño(int tamaño) {
-	this.tamaño = tamaño;
+public void setTamaÃ±o(int tamaÃ±o) {
+	this.tamaÃ±o = tamaÃ±o;
 }
 
 }
