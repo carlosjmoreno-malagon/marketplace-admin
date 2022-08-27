@@ -21,6 +21,7 @@ import javax.swing.border.EmptyBorder;
 
 import desarrollo.Hash;
 import desarrollo.TextPrompt;
+import desarrollo.consultas;
 import desarrollo_usuarios.SQLusuarios;
 import desarrollo_usuarios.usuarios;
 import javax.swing.SwingConstants;
@@ -273,6 +274,12 @@ public class Registro extends JFrame {
 		btnElimnarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		panelRegistro.add(btnElimnarDB);
 		btnElimnarDB.setLayout(null);
+		btnElimnarDB.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				eliminarElUsuario();
+			}
+		});
 		
 		JLabel lblNewLabel_6 = new JLabel("ELIMINAR");
 		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -298,8 +305,6 @@ public class Registro extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				volverAAdministrador();
 			}
-
-
 		});
 		
 		JLabel lblNewLabel_8 = new JLabel("Volver a Administrar");
@@ -314,5 +319,16 @@ public class Registro extends JFrame {
 		Administrador x = new Administrador();
 		x.setVisible(true);
 		this.dispose();
+	}
+	public void eliminarElUsuario() {
+		consultas c = new consultas();
+		boolean tras = c.eliminarUsuarios(usuarioEliminar.getText());
+		if(tras) {
+			JOptionPane.showMessageDialog(null, "El usuario se ha eliminado con exito");
+			usuarioEliminar.setText("");
+		}else {
+			JOptionPane.showMessageDialog(null, "Error al intentar eliminar el usuario");
+		}
+		
 	}
 }
