@@ -7,7 +7,7 @@ private String nombre;
 private String last_session;
 private int id_tipo;
 private String nombre_tipo;
-private String contraseña;
+private String contraseÃ±a;
 
 public int getId() {
 	return id;
@@ -22,11 +22,11 @@ public void setUsuario(String usuario) {
 	this.usuario = usuario;
 }
 
-public String getContraseña() {
-	return contraseña;
+public String getContraseÃ±a() {
+	return contraseÃ±a;
 }
-public void setContraseña(String contraseña) {
-	this.contraseña = contraseña;
+public void setContraseÃ±a(String contraseÃ±a) {
+	this.contraseÃ±a = contraseÃ±a;
 }
 public String getNombre() {
 	return nombre;

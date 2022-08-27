@@ -54,15 +54,21 @@ public class Administrador extends JFrame {
 	 * Create the frame.
 	 */
 	public Administrador() {
-		components();
+		componentes();
 		TextPrompt id = new TextPrompt("Digite el ID del producto",editarID); 
 		TextPrompt nom = new TextPrompt("Digite el nombre del producto",editarNombreDelProducto); 
+<<<<<<< HEAD
+=======
+		TextPrompt cant = new TextPrompt("Digite la cantidad en stock",editarCantidad); 
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 		TextPrompt precio = new TextPrompt("Digite el precio del producto",editarPrecio); 
 		TextPrompt idA = new TextPrompt("Digite el ID del producto",idProductoA); 
 		TextPrompt nomA = new TextPrompt("Digite el nombre del producto",nombreDelProductoA);
 		TextPrompt precioA = new TextPrompt("Digite el precio del producto",precioDelProductoA); 
+		cant.setFont(new Font("Arial", Font.PLAIN, 12));
+		
 	}
-	public void components() {
+	public void componentes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
@@ -73,38 +79,58 @@ public class Administrador extends JFrame {
 		
 		JPanel panelAdmin = new JPanel();
 		panelAdmin.setBackground(Color.WHITE);
-		panelAdmin.setBounds(0, 0, 910, 600);
+		panelAdmin.setBounds(0, 0, 900, 600);
 		contentPane.add(panelAdmin);
 		panelAdmin.setLayout(null);
 		
 		JPanel panelVentas = new JPanel();
-		panelVentas.setBounds(-10, 0, 250, 600);
+		panelVentas.setBounds(0, 0, 250, 600);
 		panelVentas.setBackground(new Color(243, 255, 198));
 		panelAdmin.add(panelVentas);
 		panelVentas.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Bienvenido Admin");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 24));
-		lblNewLabel.setBounds(25, 85, 200, 30);
+		lblNewLabel.setBounds(23, 21, 200, 30);
 		panelVentas.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Dinero recaudado:");
 		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(10, 258, 130, 30);
+		lblNewLabel_1.setBounds(10, 62, 130, 30);
 		panelVentas.add(lblNewLabel_1);
 		
 		JLabel dinero = new JLabel("$99999999");
 		dinero.setFont(new Font("Arial", Font.PLAIN, 16));
-		dinero.setBounds(150, 258, 92, 30);
+		dinero.setBounds(150, 62, 92, 30);
 		panelVentas.add(dinero);
+		
+		JPanel btnRegistrarUsuarios = new JPanel();
+		btnRegistrarUsuarios.setBackground(Color.WHITE);
+		btnRegistrarUsuarios.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		btnRegistrarUsuarios.setBounds(23, 500, 200, 40);
+		panelVentas.add(btnRegistrarUsuarios);
+		btnRegistrarUsuarios.setLayout(null);
+		btnRegistrarUsuarios.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				entrarARegistro();
+			}
+
+		});
+		
+		JLabel lblNewLabel_7 = new JLabel("Editar usuarios");
+		lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblNewLabel_7.setBounds(40, 6, 120, 29);
+		btnRegistrarUsuarios.add(lblNewLabel_7);
+		
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(250, 279, 650, 10);
 		panelAdmin.add(separator);
 		
-		JLabel lblNewLabel_2 = new JLabel("A\u00F1adir un nuevo producto");
+		JLabel lblNewLabel_2 = new JLabel("Añadir un nuevo producto o Buscar un producto");
 		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel_2.setBounds(260, 293, 255, 30);
+		lblNewLabel_2.setBounds(260, 293, 456, 30);
 		panelAdmin.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("ID(Opcional)");
@@ -164,9 +190,9 @@ public class Administrador extends JFrame {
 		separator_1_3.setBounds(477, 509, 150, 5);
 		panelAdmin.add(separator_1_3);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Editar un producto");
+		JLabel lblNewLabel_2_1 = new JLabel("Editar un producto o Eliminar un producto");
 		lblNewLabel_2_1.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel_2_1.setBounds(260, 24, 255, 30);
+		lblNewLabel_2_1.setBounds(260, 24, 397, 30);
 		panelAdmin.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_3_4 = new JLabel("ID(Opcional)");
@@ -234,7 +260,12 @@ public class Administrador extends JFrame {
 			});
 			btnAgregarDB.setLayout(null);
 			btnAgregarDB.setBackground(new Color(37, 60, 120));
+<<<<<<< HEAD
 			btnAgregarDB.setBounds(669, 380, 200, 50);
+=======
+			btnAgregarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			btnAgregarDB.setBounds(669, 366, 200, 50);
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 			panelAdmin.add(btnAgregarDB);
 			{
 				lblNewLabel_4 = new JLabel("Agregar nuevo producto");
@@ -248,12 +279,17 @@ public class Administrador extends JFrame {
 		{
 			btnBuscarAD = new JPanel();
 			btnBuscarAD.setBackground(new Color(37,60,120));
+<<<<<<< HEAD
 			btnBuscarAD.setBounds(669, 174, 200, 55);
+=======
+			btnBuscarAD.setBounds(669, 443, 200, 50);
+			btnBuscarAD.setCursor(new Cursor(Cursor.HAND_CURSOR));
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 			panelAdmin.add(btnBuscarAD);
 			btnBuscarAD.setLayout(null);
 			{
-				lblNewLabel_5 = new JLabel("buscar producto");
-				lblNewLabel_5.setBounds(21, 11, 154, 33);
+				lblNewLabel_5 = new JLabel("Buscar producto");
+				lblNewLabel_5.setBounds(20, 8, 154, 33);
 				lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 				lblNewLabel_5.setForeground(Color.WHITE);
 				lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -263,7 +299,8 @@ public class Administrador extends JFrame {
 		{
 			btnEditarDB = new JPanel();
 			btnEditarDB.setBackground(new Color(37,60,120));
-			btnEditarDB.setBounds(669, 109, 200, 50);
+			btnEditarDB.setBounds(669, 93, 200, 50);
+			btnEditarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			panelAdmin.add(btnEditarDB);
 			btnEditarDB.setLayout(null);
 			{
@@ -275,5 +312,27 @@ public class Administrador extends JFrame {
 				btnEditarDB.add(lblNewLabel_6);
 			}
 		}
+		
+		JPanel btnEliminarDB = new JPanel();
+		btnEliminarDB.setBackground(new Color(37, 60, 120));
+		btnEliminarDB.setBounds(669, 174, 200, 50);
+		btnEliminarDB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		panelAdmin.add(btnEliminarDB);
+		btnEliminarDB.setLayout(null);
+		
+		JLabel lblNewLabel_8 = new JLabel("Eliminar producto");
+		lblNewLabel_8.setForeground(Color.WHITE);
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblNewLabel_8.setBounds(42, 8, 110, 30);
+		btnEliminarDB.add(lblNewLabel_8);
 	}
+	
+	public void entrarARegistro() {
+		Registro x = new Registro();
+		x.setVisible(true);
+		this.dispose();
+	}
+	
 }
+

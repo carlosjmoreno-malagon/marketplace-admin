@@ -28,23 +28,34 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JPasswordField;
+<<<<<<< HEAD
 import javax.swing.JScrollBar;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
+=======
+import desarrollo.productos;
+import javax.swing.JScrollBar;
+import javax.swing.table.DefaultTableModel;
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 public class CajaRegistradora extends JFrame {
 
 	private JPanel contentPane;
 	public JTextField nombreDelProducto;
 	public JTextField cantidadDeProducto;
 	private usuarios mod;
+<<<<<<< HEAD
 	public JPanel btnAgregar;
 	public JTable table;
 	private JLabel lblNewLabel_5;
 	public JLabel total;
 	public JPanel btnRecibo;
 	private JLabel lblNewLabel_4;
+=======
+	private JPanel btnAgregar;
+	private JTable table;
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 
 	/**
 	 * Launch the application.
@@ -99,6 +110,7 @@ public class CajaRegistradora extends JFrame {
 		nombreDelProducto.setBackground(new Color(28, 82, 83));
 		nombreDelProducto.setBorder(null);
 		nombreDelProducto.setBounds(70, 115, 200, 20);
+		nombreDelProducto.setCaretColor(Color.WHITE);
 		panelCaja.add(nombreDelProducto);
 		nombreDelProducto.setColumns(10);
 		
@@ -118,6 +130,7 @@ public class CajaRegistradora extends JFrame {
 		cantidadDeProducto.setBackground(new Color(28, 82, 83));
 		cantidadDeProducto.setBorder(null);
 		cantidadDeProducto.setBounds(70, 235, 210, 20);
+		cantidadDeProducto.setCaretColor(Color.WHITE);
 		panelCaja.add(cantidadDeProducto);
 		cantidadDeProducto.setColumns(10);
 		
@@ -146,6 +159,7 @@ public class CajaRegistradora extends JFrame {
 		panelCaja.add(panelDeProductos);
 		panelDeProductos.setLayout(null);
 		
+<<<<<<< HEAD
 		//tabla
 		String[] nombreColumnas = {"Nombre","Cantidad","Precio"};
 		Object[][] data = {{"Arroz 500g", 3, 6000},{"3D Multiusos",2, 5000}};
@@ -204,3 +218,46 @@ public class CajaRegistradora extends JFrame {
 		
 		}
 }
+=======
+		JLabel lblNewLabel_4 = new JLabel("    RECIBO DE PAGO");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 16));
+		lblNewLabel_4.setIcon(new ImageIcon(CajaRegistradora.class.getResource("/primero/img/factura.png")));
+		lblNewLabel_4.setBounds(10, 4, 230, 35);
+		btnRecibo.add(lblNewLabel_4);
+		
+		JPanel panelDeProductos = new JPanel();
+		panelDeProductos.setBackground(Color.WHITE);
+		panelDeProductos.setBounds(445, 39, 400, 500);
+		panelCaja.add(panelDeProductos);
+		panelDeProductos.setLayout(null);
+		
+		//tabla
+		String[] nombreColumnas = {"Nombre","Cantidad","Precio"};
+		Object[][] data = {{"Arroz 500g", 3, 6000},{"3D Multiusos",2, 5000}};
+		table = new JTable();
+		table.setModel(new DefaultTableModel(data, nombreColumnas));
+		table.setFont(new Font("Arial", Font.PLAIN, 14));
+		table.setBounds(0, 0, 400, 500);
+		panelDeProductos.add(table);
+		
+		btnAgregar = new JPanel();
+		btnAgregar.setBackground(new Color(37,60,120));
+		btnAgregar.setBounds(60, 350, 250, 40);
+		btnAgregar.setLayout(null);
+		btnAgregar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		panelCaja.add(btnAgregar);
+			
+		JLabel lblNewLabel_2 = new JLabel("AGREGAR PRODUCTO");
+		lblNewLabel_2.setBounds(20, 5, 209, 33);
+		btnAgregar.add(lblNewLabel_2);
+		lblNewLabel_2.setIcon(new ImageIcon(CajaRegistradora.class.getResource("/primero/img/carrito-de-compras.png")));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 16));
+		
+
+		
+		}
+}
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3

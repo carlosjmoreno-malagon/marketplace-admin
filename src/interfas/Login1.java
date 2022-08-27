@@ -40,15 +40,13 @@ import java.awt.Toolkit;
 public class Login1 extends JFrame  {
 
 	private JPanel contentPane;
-	private JTextField usuarioR;
-	private JTextField nombreR;
+
 	private JTextField usuario;
 	private usuarios mod;
-	private JLabel lblNewLabel_7;
-	private JSeparator separator_4;
-	private JComboBox estatusR;
+
+
 	private JPasswordField password;
-	private JPasswordField passwordR;
+
 
 	/**
 	 * Launch the application.
@@ -70,18 +68,22 @@ public class Login1 extends JFrame  {
 	 * Create the frame.
 	 */
 	public Login1() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Login1.class.getResource("/primero/img/MarketPlace-Admin.jpg")));
-		complement();
+		componentes();
 		TextPrompt usu = new TextPrompt("Digite su usuario",usuario) ;
-		TextPrompt con = new TextPrompt("Digite su contraseña", password);
+		TextPrompt con = new TextPrompt("Digite su contraseÃ±a", password);
 		con.setFont(new Font("Arial", Font.PLAIN, 14));
+<<<<<<< HEAD
 		TextPrompt usuR = new TextPrompt("Digite su usuario", usuarioR);
 		usuR.setForeground(Color.BLACK);
 		TextPrompt conR = new TextPrompt("Digite su contraseña", passwordR);
 		conR.setFont(new Font("Arial", Font.PLAIN, 14));
 		TextPrompt nom = new TextPrompt("Digite su nombre", nombreR);
+=======
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 	}
-	public void complement() {
+	
+	public void componentes() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login1.class.getResource("/primero/img/MarketPlace-Admin.jpg")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SQLusuarios modsql = new SQLusuarios();
@@ -92,12 +94,8 @@ public class Login1 extends JFrame  {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panelRegistro = new JPanel();
-		panelRegistro.setBackground(new Color(28,82,83));
-		panelRegistro.setBounds(0, 0, 450, 600);
-		contentPane.add(panelRegistro);
-		panelRegistro.setLayout(null);
 		
+<<<<<<< HEAD
 		JLabel lblNewLabel = new JLabel("Registrarse");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -247,6 +245,9 @@ public class Login1 extends JFrame  {
 		passwordR.setBounds(55, 333, 250, 20);
 		panelRegistro.add(passwordR);
 		
+=======
+
+>>>>>>> 97cb62621ba5d1ef48cd3210b81eab5013ef49a3
 		JPanel panelSesion = new JPanel();
 		panelSesion.setBackground(new Color(243, 255, 198));
 		panelSesion.setBounds(450, 0, 450, 600);
@@ -309,7 +310,7 @@ public class Login1 extends JFrame  {
 					String newpas = Hash.sha1(pas);
 					
 					mod.setUsuario(usuario.getText());
-					mod.setContraseña(newpas);
+					mod.setContraseÃ±a(newpas);
 					mod.setLast_session(fechahora.format(date));
 					
 					if(modsql.login(mod)) {
@@ -348,7 +349,6 @@ public class Login1 extends JFrame  {
 			panelSesion.add(password);
 		}
 	}
-	
 
 	protected void en() {
 		busproduc mod1 = new busproduc();

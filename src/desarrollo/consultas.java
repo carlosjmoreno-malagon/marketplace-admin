@@ -81,9 +81,30 @@ public class consultas extends coneccion {
 				System.err.println(e1);
 			}
 		}
-		
-		
 	}
+	
+	public boolean eliminarUsuarios(String nombre) {
+		PreparedStatement ps = null;
+		Connection con = getConnection();
+		
+		String sql = "DELETE FROM  usuarios WHERE usuario=?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, nombre);
+			ps.execute();
+			return true;
+		}catch(SQLException e) {
+			System.out.println("error");
+			return false;
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e1) {
+				System.err.println(e1);
+			}
+		}
+	}
+	
 	public boolean buscar(busproduc pro) {
 		PreparedStatement ps=null;
 		ResultSet res=null;
