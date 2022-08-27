@@ -127,9 +127,9 @@ public class Administrador extends JFrame {
 		separator.setBounds(250, 279, 650, 10);
 		panelAdmin.add(separator);
 		
-		JLabel lblNewLabel_2 = new JLabel("A\u00F1adir un nuevo producto");
+		JLabel lblNewLabel_2 = new JLabel("Añadir un nuevo producto o Buscar un producto");
 		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel_2.setBounds(260, 293, 255, 30);
+		lblNewLabel_2.setBounds(260, 293, 456, 30);
 		panelAdmin.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("ID(Opcional)");
@@ -208,9 +208,9 @@ public class Administrador extends JFrame {
 		separator_1_3.setBounds(477, 509, 150, 5);
 		panelAdmin.add(separator_1_3);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Editar un producto");
+		JLabel lblNewLabel_2_1 = new JLabel("Editar un producto o Eliminar un producto");
 		lblNewLabel_2_1.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel_2_1.setBounds(260, 24, 255, 30);
+		lblNewLabel_2_1.setBounds(260, 24, 397, 30);
 		panelAdmin.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_3_4 = new JLabel("ID(Opcional)");
@@ -311,12 +311,12 @@ public class Administrador extends JFrame {
 		{
 			btnBuscarAD = new JPanel();
 			btnBuscarAD.setBackground(new Color(37,60,120));
-			btnBuscarAD.setBounds(669, 443, 200, 55);
+			btnBuscarAD.setBounds(669, 443, 200, 50);
 			panelAdmin.add(btnBuscarAD);
 			btnBuscarAD.setLayout(null);
 			{
-				lblNewLabel_5 = new JLabel("buscar producto");
-				lblNewLabel_5.setBounds(21, 11, 154, 33);
+				lblNewLabel_5 = new JLabel("Buscar producto");
+				lblNewLabel_5.setBounds(20, 8, 154, 33);
 				lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 				lblNewLabel_5.setForeground(Color.WHITE);
 				lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -326,7 +326,7 @@ public class Administrador extends JFrame {
 		{
 			btnEditarDB = new JPanel();
 			btnEditarDB.setBackground(new Color(37,60,120));
-			btnEditarDB.setBounds(669, 109, 200, 50);
+			btnEditarDB.setBounds(669, 93, 200, 50);
 			panelAdmin.add(btnEditarDB);
 			btnEditarDB.setLayout(null);
 			{
@@ -338,6 +338,19 @@ public class Administrador extends JFrame {
 				btnEditarDB.add(lblNewLabel_6);
 			}
 		}
+		
+		JPanel btnEliminarDB = new JPanel();
+		btnEliminarDB.setBackground(new Color(37, 60, 120));
+		btnEliminarDB.setBounds(669, 174, 200, 50);
+		panelAdmin.add(btnEliminarDB);
+		btnEliminarDB.setLayout(null);
+		
+		JLabel lblNewLabel_8 = new JLabel("Eliminar producto");
+		lblNewLabel_8.setForeground(Color.WHITE);
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblNewLabel_8.setBounds(42, 8, 110, 30);
+		btnEliminarDB.add(lblNewLabel_8);
 	}
 	
 }

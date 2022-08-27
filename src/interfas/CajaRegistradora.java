@@ -92,6 +92,7 @@ public class CajaRegistradora extends JFrame {
 		nombreDelProducto.setBackground(new Color(28, 82, 83));
 		nombreDelProducto.setBorder(null);
 		nombreDelProducto.setBounds(70, 115, 200, 20);
+		nombreDelProducto.setCaretColor(Color.WHITE);
 		panelCaja.add(nombreDelProducto);
 		nombreDelProducto.setColumns(10);
 		
@@ -111,6 +112,7 @@ public class CajaRegistradora extends JFrame {
 		cantidadDeProducto.setBackground(new Color(28, 82, 83));
 		cantidadDeProducto.setBorder(null);
 		cantidadDeProducto.setBounds(70, 235, 210, 20);
+		cantidadDeProducto.setCaretColor(Color.WHITE);
 		panelCaja.add(cantidadDeProducto);
 		cantidadDeProducto.setColumns(10);
 		
